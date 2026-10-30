@@ -1,4 +1,11 @@
-# 📞 Awesome VoIP & Inbound Call Tracking [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+<p align="center">
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
+  <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://awesome.re/badge.svg" alt="Awesome"/></a>
+  <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
+</p>
+
+# 📞 Awesome VoIP & Inbound Call Tracking
 
 <p align="center">
   <img src="./assets/banner.svg" alt="Awesome VoIP & Inbound Call Tracking Banner" width="100%">
@@ -13,6 +20,8 @@
   <a href="#-saas--hosted-platforms">SaaS Platforms</a> •
   <a href="#-open-source-github-projects">Open-Source Projects</a> •
   <a href="#-key-concepts--telephony-architecture">Architecture</a> •
+  <a href="#-support--sponsor">Support</a> •
+  <a href="#-star-history">Star History</a> •
   <a href="#-how-to-contribute">Contributing</a>
 </p>
 
@@ -40,6 +49,8 @@ The global **VoIP and Cloud Telephony market** is estimated at **$160B–$175B i
   - [⭐ Open-Source Solutions by Community Stars](#-open-source-solutions-ranked-by-stars)
   - [Detailed Project Breakdown](#-detailed-open-source-breakdowns)
 - [🏗️ Key Concepts & Telephony Architecture](#-key-concepts--telephony-architecture)
+- [💖 Support & Sponsor](#-support--sponsor)
+- [⭐ Star History](#-star-history)
 - [🤝 How to Contribute](#-how-to-contribute)
 - [⚖️ Disclaimer & Compliance](#-disclaimer--compliance)
 
@@ -149,6 +160,27 @@ To understand how VoIP and Inbound Call Tracking function together, consider the
 1. **Dynamic Number Insertion (DNI)**: JavaScript on a web page displays a unique phone number from a pool based on the visitor's referrer, UTM tags, or session ID, linking the phone call to marketing attribution.
 2. **SIP Signaling vs. RTP Media**: SIP (Session Initiation Protocol) negotiates call setup, routing, and termination, while RTP (Real-time Transport Protocol) carries the actual audio payload.
 3. **CDR (Call Detail Record)**: Metadata produced at call termination containing timestamp, duration, caller ID, destination, disposition (answered/busy), and carrier cost.
+
+---
+
+## 💖 Support & Sponsor
+
+Thank you for exploring and utilizing the **Awesome VoIP & Inbound Call Tracking** resource list! 🌟
+
+If this repository saved you time, informed your architecture, or assisted in your marketing attribution stack, please consider supporting the project:
+
+- ⭐ **Star this repository** to help others discover it across GitHub.
+- 🍴 **Fork and share** with colleagues, developers, and telecom teams.
+- ☕ **Buy a coffee or sponsor** on the [GitHub Sponsor Dashboard](https://github.com/sponsors/ishandutta2007) to help support continuous curation and open-source research.
+
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-%E2%99%A5-pink?style=for-the-badge&logo=github)](https://github.com/sponsors/ishandutta2007)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/ishandutta2007)
+
+---
+
+## ⭐ Star History
+
+[![Star History Chart](https://star-history.dera.page/svg?repos=ishandutta2007/Awesome-VOIP-Inbound-Call-Tracking&type=date&legend=top-left)](https://star-history.dera.page/#ishandutta2007/Awesome-VOIP-Inbound-Call-Tracking&type=date&legend=top-left)
 
 ---
 
