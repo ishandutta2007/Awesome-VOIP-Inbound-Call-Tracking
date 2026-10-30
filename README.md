@@ -1,223 +1,170 @@
-# Awesome-VOIP-Inbound-Call-Tracking
-
-## Top VoIP & Inbound Call Tracking Ecosystem
-
-
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**  
-
-*Focused on Cloud Telephony, Call Attribution & Self-Hosted Voice Infrastructure*  
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **SaaS platforms** and **open-source projects** for **VoIP & Inbound Call Tracking**. These tools enable businesses to manage inbound and outbound voice calls, attribute calls to marketing sources, record and analyze conversations, and build programmable telephony workflows—turning voice from a black-box channel into a measurable, automatable part of the customer journey.
-
-
-
-**Examples** include HubSpot Inbound Calling, Aircall, Talkdesk, RingCentral, CallRail, Nextiva, Dialpad, 8x8, CloudTalk, and Vonage (the category leaders).
-
-
-
-**Open-source emphasis**: VoIP & Inbound Call Tracking is a domain where open-source tooling is **fragmented but genuinely capable at the infrastructure layer**. The strongest active project is **VoIPbin**, a production-grade, fully self-hostable CPaaS platform with modular services for call routing, AI callbots, conferencing, recording, and multi-channel messaging . **Comcent Community Edition** provides a turnkey contact center with browser dialers, queues, transcription, and AI voice bots—installable on a single Linux box with a SIP trunk . **CXMind** offers a non-invasive analytics engine that passively taps SIP/RTP traffic via HEP for real-time quality monitoring and AI agent assistance, without touching your PBX . For call detail record (CDR) analysis, **CDR-Stats** provides reporting and fraud detection, though it has been dormant for over a decade . The critical gap: **no open-source project replicates CallRail's marketing attribution**—tying a phone call back to the specific ad click or web session that drove it—which requires dynamic number insertion (DNI) and integration with ad platforms that commercial tools own.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
-
-## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-products)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
-- [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[HubSpot Inbound Calling](https://www.hubspot.com/)**  
-
-  Native calling within HubSpot CRM; click-to-call from contact records, automatic call logging, recording, and voicemail drop, with calls tied directly to deal and contact timelines.
-
-
-
-- **[Aircall](https://aircall.io/)**  
-
-  Cloud phone system built for sales and support teams; features call routing, IVR, recording, voicemail, SMS, and deep integrations with CRMs (HubSpot, Salesforce, Pipedrive) and helpdesks (Zendesk, Intercom) .
-
-
-
-- **[Talkdesk](https://www.talkdesk.com/)**  
-
-  Cloud contact center platform with AI-powered agent assistance, speech analytics, workforce management, and omnichannel routing; positioned for enterprise customer experience.
-
-
-
-- **[RingCentral](https://www.ringcentral.com/)**  
-
-  Unified communications platform with cloud PBX, video meetings, team messaging, and contact center; comprehensive but broad rather than call-tracking-specific.
-
-
-
-- **[CallRail](https://www.callrail.com/)**  
-
-  The leading **call tracking and analytics** platform; uses dynamic number insertion to attribute inbound calls to marketing sources (Google Ads, organic, direct mail), records calls, and provides conversation intelligence. Plans start at $50/month for the Call Tracking tier .
-
-
-
-- **[Nextiva](https://www.nextiva.com/)**  
-
-  Business communications platform with cloud phone, contact center, and analytics; features call recording, IVR, and CRM integrations.
-
-
-
-- **[Dialpad](https://www.dialpad.com/)**  
-
-  AI-powered cloud communications with voice, video, and messaging; features real-time transcription, sentiment analysis, and integration with CRM and helpdesk tools.
-
-
-
-- **[8x8](https://www.8x8.com/)**  
-
-  Unified communications and contact center platform for enterprises; includes voice, video, chat, and contact center analytics.
-
-
-
-- **[CloudTalk](https://www.cloudtalk.io/)**  
-
-  Cloud call center software with call routing, IVR, recording, and analytics; positioned for sales and support teams at mid-market pricing.
-
-
-
-- **[Vonage](https://www.vonage.com/)**  
-
-  Business communications platform with cloud PBX, contact center, and programmable APIs (Vonage API) for building custom voice applications.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### Full CPaaS & Contact Center Platforms
-
-
-
-- **[VoIPbin](https://github.com/voipbin/monorepo)**  
-
-  The most comprehensive open-source **CPaaS backend platform** available, explicitly positioned as "the only production-grade open-source CPaaS platform that you can fully self-host" . Monorepo architecture with modular services: **bin-call-manager** (call routing/control), **bin-flow-manager** (programmable call flows via JSON/API), **bin-ai-manager** (AI chatbot and LLM orchestration), **bin-campaign-manager** (outbound dialing), **bin-conference-manager**, **bin-queue-manager**, **bin-number-manager** (DID provisioning), and **bin-rag-manager**. Use cases include programmable IVRs, AI-powered callbots, mass outbound campaigns, and scalable conferencing. Deployable on GCP or any Kubernetes setup . **The strongest foundation for building a custom call tracking or contact center platform**—but it is a backend monorepo requiring engineering effort to deploy and operate.
-
-
-
-- **[Comcent Community Edition](https://github.com/comcent-io/comcent-ce)**  
-
-  Open-source **contact center** installable on a single Linux box (Ubuntu 22.04+/Debian 12+, $12/mo droplet sufficient) . Bring your own SIP trunk (Twilio, Telnyx, Bandwidth), run one install script, and get: browser-based dialers for agents, phone numbers, queues, **call recording**, **call transcription**, AI summaries, sentiment analysis, semantic search, a **real-time AI voice bot**, multi-tenant orgs, API keys, and webhooks . Requires Docker and a domain for HTTPS . **The fastest path to a working self-hosted contact center with AI features**—but it is a contact center, not a marketing call-tracking platform with attribution.
-
-
-
-### Analytics & Monitoring (Non-Invasive)
-
-
-
-- **[CXMind](https://github.com/Sonicwell/cxmind)**  
-
-  Open-source **real-time VoIP analytics platform** (Business Source License 1.1, converting to Apache 2.0 in 2030) . **Non-invasive**—passively captures SIP/RTP traffic via **HEP tapping** with zero changes to your existing PBX . Components: **Ingestion Engine** (Go, processes SIP/RTP/RTCP, HEP v3), **Sniffer** (standalone capture agent), **PCAP Simulator** (traffic replay for testing), **Admin UI** (React dashboard), and **Copilot Extension** (Chrome extension for live AI agent coaching) . Benchmarked at 300+ concurrent calls on 4 cores/8GB RAM. Features **edge PCI-DSS DTMF masking** and PII sanitization . **The best open-source option for adding analytics to an existing telephony infrastructure** without replacing it.
-
-
-
-### CDR Analysis & Reporting
-
-
-
-- **[CDR-Stats](https://github.com/Star2Billing/cdr-stats)**  
-
-  Open-source **Call Detail Record analysis and reporting** for FreeSWITCH, Asterisk, and other VoIP switches (Django/Python, PostgreSQL, Celery, MongoDB) . Features: browsing millions of CDRs, call rating, multi-switch and multi-tenant monitoring, **fraud detection** (unusual traffic patterns, dropped call increases, calls to disallowed countries), blacklisting, geographic alerts, and real-time reporting . **CAUTION**: last commit was over 11 years ago (dormant since ~2014) —the architecture is dated and dependencies are stale. Listed for reference but **not recommended for new deployments**.
-
-
-
-### Telephony Infrastructure (Build Your Own)
-
-
-
-- **[Asterisk](https://www.asterisk.org/)**  
-
-  The foundational open-source PBX (GPL-2.0) that powers many commercial call tracking and contact center platforms . Provides call routing, recording, IVR, and CDR generation—but **no analytics, attribution, or UI**; you build the tracking layer on top . A canireplaceit.com analysis notes that Asterisk "covers most" of CallRail's functionality under GPL-2.0, but requires "real ops work" .
-
-
-
-- **[FreeSWITCH](https://freeswitch.org/)**  
-
-  High-capacity open-source softswitch (MPL 1.1) with built-in call recording and CDR—the engine under jambonz and most self-hosted call tracking stacks . **XML configuration is complex**, no analytics dashboard, and operating it takes real effort .
-
-
-
-- **[OpenSIPS](https://opensips.org/)**  
-
-  Open-source SIP router/proxy that can map campaign numbers to agents and emit call data for tracking—but it is **routing core only**: no media, no UI, just config . Best for teams building custom SIP routing logic.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Wazo Platform** — Open-source unified communications platform with **wazo-call-logd** for generating call logs on Wazo servers . **Platform-specific**—provides call logging within the Wazo ecosystem.
-
-- **HOMER** — 100% open-source SIP/VoIP/RTC **packet capture and monitoring** platform (sipcapture/homer) . **Monitoring-focused**—for network-level call quality analysis, not business call tracking.
-
-- **Whitebox VoIP Plugin** — Passive observer + recorder that logs every ring/pickup/hangup, downloads recordings, transcribes via Whisper, and **assigns trackable phone numbers to web visitors** for session correlation (DNI-like behavior) . **Closest open-source pattern to CallRail's attribution**—but it is a plugin for the Whitebox platform, not a standalone product.
-
-
-
-**Frameworks for building custom systems**: For a **full self-hosted CPaaS with programmable flows**, VoIPbin provides the most complete modular backend . For a **turnkey contact center with AI**, Comcent CE installs on a single server . For **adding analytics to an existing PBX**, CXMind's passive HEP tapping is non-invasive . For **raw telephony infrastructure**, Asterisk or FreeSWITCH provide the engine, but you must build the tracking and attribution layer. No open-source project replicates **CallRail's dynamic number insertion and ad-platform attribution** out of the box—Whitebox's plugin demonstrates the pattern but is not a standalone product.
-
-
-
-## How to Contribute
-
-
-
-1. Fork the repo.
-
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- VoIP platforms handling call recordings and customer data must comply with applicable privacy regulations (GDPR, CCPA) and call recording consent laws (two-party consent states in the US, similar requirements elsewhere); **PCI-DSS compliance is required if calls capture payment card data**.
-
-- **Open-source VoIP is strong at infrastructure and contact center layers**—VoIPbin provides a modular CPaaS backend , Comcent CE provides a turnkey contact center , and CXMind provides non-invasive analytics . However, **no open-source project replicates CallRail's marketing attribution** (dynamic number insertion + ad platform integration) as a standalone product, and **CDR-Stats is dormant** (last commit 11+ years ago) . Organizations requiring call tracking with attribution should evaluate commercial platforms or build custom atop Asterisk/FreeSWITCH with significant engineering effort.
-
-- Verify license terms for commercial use; VoIPbin is open-source (check repository), Comcent CE is open-source, CXMind uses BSL 1.1 (converts to Apache 2.0 in 2030) , and Asterisk uses GPL-2.0.
-
-
+# 📞 Awesome VoIP & Inbound Call Tracking [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+
+<p align="center">
+  <img src="./assets/banner.svg" alt="Awesome VoIP & Inbound Call Tracking Banner" width="100%">
+</p>
+
+<p align="center">
+  <strong>A curated directory of top Cloud Telephony SaaS, Dynamic Number Insertion (DNI), Inbound Call Tracking, and Open-Source Voice Infrastructure.</strong>
+</p>
+
+<p align="center">
+  <a href="#-sector-overview--market-dynamics">Sector Overview</a> •
+  <a href="#-saas--hosted-platforms">SaaS Platforms</a> •
+  <a href="#-open-source-github-projects">Open-Source Projects</a> •
+  <a href="#-key-concepts--telephony-architecture">Architecture</a> •
+  <a href="#-how-to-contribute">Contributing</a>
+</p>
 
 ---
 
+## 🌐 Overview & SEO Keywords
 
+Welcome to the definitive awesome list for **VoIP (Voice over IP)**, **Inbound Call Tracking**, **Call Attribution**, and **Programmable Telephony Infrastructure**. Whether you are building an AI-powered voice agent, optimizing marketing campaigns with Dynamic Number Insertion (DNI), or deploying carrier-grade SIP proxies and contact centers, this repository curates both enterprise SaaS solutions and self-hostable open-source frameworks.
 
-**Made for telephony engineers, contact center operators, and developers building voice infrastructure.**  
+> **Key Focus Areas**: Cloud PBX • Call Tracking Software • Dynamic Number Insertion (DNI) • Call Detail Records (CDR) • CPaaS (Communications Platform as a Service) • SIP Trunking • WebRTC • Conversational AI & Speech Analytics • IVR & Omnichannel Routing • Telephony Fraud Detection.
 
-Let's make VoIP and call tracking more open, but with clear eyes about the marketing attribution and turnkey tracking gaps that commercial platforms still fill.
+---
+
+## 📊 Sector Overview & Market Dynamics
+
+The global **VoIP and Cloud Telephony market** is estimated at **$160B–$175B in 2025–2026** (scaling toward $200B+ at a ~10–12% CAGR), driven by enterprise cloud migrations and AI voice agents, while the dedicated **Call Tracking & Attribution Software market** represents approximately **$3B–$5B**. The overall telephony landscape is **moderately fragmented**: enterprise UCaaS and core CRM ecosystems exhibit strong platform consolidation around category heavyweights, yet regional carriers, specialized DNI marketing attribution engines, and developer-first CPaaS platforms maintain vibrant fragmentation across mid-market and self-hosted environments.
+
+---
+
+## 📑 Table of Contents
+
+- [📊 Sector Overview & Market Dynamics](#-sector-overview--market-dynamics)
+- [🏢 SaaS / Hosted Platforms](#-saas--hosted-platforms)
+- [💻 Open-Source GitHub Projects](#-open-source-github-projects)
+  - [⭐ Open-Source Solutions by Community Stars](#-open-source-solutions-ranked-by-stars)
+  - [Detailed Project Breakdown](#-detailed-open-source-breakdowns)
+- [🏗️ Key Concepts & Telephony Architecture](#-key-concepts--telephony-architecture)
+- [🤝 How to Contribute](#-how-to-contribute)
+- [⚖️ Disclaimer & Compliance](#-disclaimer--compliance)
+
+---
+
+## 🏢 SaaS / Hosted Platforms
+
+Below is a structured breakdown of industry-leading commercial VoIP and call-tracking SaaS platforms, evaluated by **pricing transparency**, **trial terms**, and **company scale** (sorted by valuation / market cap descending):
+
+| Company / Product | Starting Price (Billed Annually) | Free Tier / Trial Allowance | Company Scale (Valuation / Market Cap / Rev) | Key Capabilities & Highlights |
+| :--- | :--- | :--- | :--- | :--- |
+| **[HubSpot Inbound Calling](https://www.hubspot.com/)** 🚀 | **$15/user/month** (Sales/Service Hub Starter) | **Free Forever CRM tier** (0 inbound numbers; manual logging); Paid plans offer 14-day trials on request | **~$12B–$13B Market Cap** (~$2.6B Annual Rev) | Native CRM phone numbers, automated inbound call logging, synchronized contact timelines, and voicemail drop. |
+| **[Talkdesk](https://www.talkdesk.com/)** 🎧 | **$85/user/month** (Digital / Voice Essentials) | **No self-serve free trial** (Sales demo and custom proof-of-concept credits upon qualification) | **~$10B Valuation** (~$315M Annual Rev) | AI-powered enterprise contact center (CCaaS), real-time transcription, agent assistance, and omnichannel routing. |
+| **[RingCentral](https://www.ringcentral.com/)** 🌐 | **$20/user/month** (RingEX Core) | **14-day free trial** (Capped at 5 users, 2 desk phones; SMS disabled during trial) | **~$6.3B Market Cap** (~$2.51B Annual Rev) | Unified communications (UCaaS), enterprise cloud PBX, unlimited US/CA calling, team messaging, and video conferencing. |
+| **[Vonage](https://www.vonage.com/)** 📱 | **$13.99/line/month** (Mobile Plan) | **No standard self-serve trial** (14-day demo / sales evaluation sandbox for unified comms) | **$6.2B Acquisition** by Ericsson (~$1.4B Annual Rev) | Cloud PBX, unified business communications, and enterprise-grade programmable voice/video APIs (Nexmo engine). |
+| **[Nextiva](https://www.nextiva.com/)** 💼 | **$15/user/month** (Digital / Core Plan) | **30-day money-back guarantee** (No ongoing free tier; live guided interactive demo sandbox) | **~$2.7B Valuation** (~$250M Annual Rev) | Cloud business phone, IVR routing, team collaboration, CRM integrations, and omnichannel customer communication. |
+| **[Dialpad](https://www.dialpad.com/)** 🤖 | **$15/user/month** (Dialpad Connect Standard) | **14-day free trial** (Full access to core VoIP and AI features for testing) | **~$2.2B Valuation** (~$300M ARR) | Real-time AI transcription, live sentiment analysis, call recording, voice summary notes, and CRM integration. |
+| **[Aircall](https://aircall.io/)** ☎️ | **$30/user/month** (Essentials; 3-user minimum = $90/mo) | **7-day free trial** (Capped at 3 numbers, 100 call minutes total, max 7 mins/call, 100 SMS) | **~$1B Valuation** (~$200M ARR) | Cloud call center built specifically for sales and support; native integrations with HubSpot, Salesforce, and Zendesk. |
+| **[CallRail](https://www.callrail.com/)** 🎯 | **$50/account/month** (Call Tracking Tier) | **14-day free trial** (Includes 5 local trackable numbers and 100 minutes of call/transcription usage) | **~$500M–$1B Valuation** (~$100M Annual Rev) | Market-leading dynamic number insertion (DNI), multi-touch PPC/SEO attribution, and conversation intelligence. |
+| **[8x8](https://www.8x8.com/)** 📡 | **$15/user/month** (8x8 Express) | **30-day free trial** (Includes unlimited calling within US/Canada, business SMS, and basic video meetings) | **~$300M Market Cap** (~$710M Annual Rev) | Integrated cloud phone system, contact center capabilities, cross-region SIP routing, and global carrier interconnects. |
+| **[CloudTalk](https://www.cloudtalk.io/)** ⚡ | **$19/user/month** (Starter Plan) | **14-day free trial** (No credit card required; includes test credit and international number provisioning) | **~$150M–$200M Valuation** (~$35M Annual Rev) | Modern cloud call center software, smart dialers, skill-based IVR, real-time call monitoring, and mid-market workflows. |
+
+---
+
+## 💻 Open-Source GitHub Projects
+
+Open-source VoIP and call tracking repositories deliver remarkable flexibility at the infrastructure, softswitch, and non-invasive monitoring layers.
+
+### ⭐ Open-Source Solutions Ranked by Stars
+
+All projects below are ordered by community adoption (GitHub stargazers count descending), featuring social badges linked directly to their stargazer history:
+
+| Project | GitHub Stars | Core Language / Stack | Primary Focus |
+| :--- | :--- | :--- | :--- |
+| **[LiveKit](https://github.com/livekit/livekit)** 🎥 | [![LiveKit Stars](https://img.shields.io/github/stars/livekit/livekit?style=social&color=white)](https://github.com/livekit/livekit/stargazers) | Go / WebRTC | Real-time WebRTC infrastructure, telephony SIP gateway & multimodal voice AI |
+| **[Fonoster](https://github.com/fonoster/fonoster)** 📞 | [![Fonoster Stars](https://img.shields.io/github/stars/fonoster/fonoster?style=social&color=white)](https://github.com/fonoster/fonoster/stargazers) | Node.js / TypeScript | Open-source alternative to Twilio; programmable voice, SIP trunking & IVR flows |
+| **[FreeSWITCH](https://github.com/signalwire/freeswitch)** 🎛️ | [![FreeSWITCH Stars](https://img.shields.io/github/stars/signalwire/freeswitch?style=social&color=white)](https://github.com/signalwire/freeswitch/stargazers) | C / C++ | High-capacity carrier softswitch, call routing, audio recording & CDR core |
+| **[Asterisk](https://github.com/asterisk/asterisk)** 🏛️ | [![Asterisk Stars](https://img.shields.io/github/stars/asterisk/asterisk?style=social&color=white)](https://github.com/asterisk/asterisk/stargazers) | C | The foundational open-source PBX engine, IVR, dialplans, and media gateway |
+| **[Kamailio](https://github.com/kamailio/kamailio)** 🌐 | [![Kamailio Stars](https://img.shields.io/github/stars/kamailio/kamailio?style=social&color=white)](https://github.com/kamailio/kamailio/stargazers) | C | Blazing-fast SIP proxy, registrar, load-balancer, and telecom routing engine |
+| **[HOMER](https://github.com/sipcapture/homer)** 🔍 | [![HOMER Stars](https://img.shields.io/github/stars/sipcapture/homer?style=social&color=white)](https://github.com/sipcapture/homer/stargazers) | Go / C / Web | Packet capture and monitoring for SIP/VoIP/RTC, HEP capture, and diagnostics |
+| **[OpenSIPS](https://github.com/OpenSIPS/opensips)** 🚦 | [![OpenSIPS Stars](https://img.shields.io/github/stars/OpenSIPS/opensips?style=social&color=white)](https://github.com/OpenSIPS/opensips/stargazers) | C | Multi-functional SIP server, high-throughput call proxy, and accounting generator |
+| **[RTPEngine](https://github.com/sipwise/rtpengine)** 🔊 | [![RTPEngine Stars](https://img.shields.io/github/stars/sipwise/rtpengine?style=social&color=white)](https://github.com/sipwise/rtpengine/stargazers) | C | Kernel-level proxy for RTP/SRTP audio/video streams, transcoding, and recording |
+| **[Linphone Desktop](https://github.com/BelledonneCommunications/linphone-desktop)** 🖥️ | [![Linphone Stars](https://img.shields.io/github/stars/BelledonneCommunications/linphone-desktop?style=social&color=white)](https://github.com/BelledonneCommunications/linphone-desktop/stargazers) | C++ / QML | Cross-platform SIP client and softphone for desktop call handling and testing |
+| **[Drachtio Server](https://github.com/drachtio/drachtio-server)** ⚡ | [![Drachtio Stars](https://img.shields.io/github/stars/drachtio/drachtio-server?style=social&color=white)](https://github.com/drachtio/drachtio-server/stargazers) | C++ | High-performance SIP signaling server with Node.js/Go control applications |
+| **[Sippy B2BUA](https://github.com/sippy/b2bua)** 🔄 | [![Sippy Stars](https://img.shields.io/github/stars/sippy/b2bua?style=social&color=white)](https://github.com/sippy/b2bua/stargazers) | Python / C | Back-to-Back User Agent for call routing, CDR billing, and stateful tracking |
+| **[Comcent Community Edition](https://github.com/comcent-io/comcent-ce)** 🤖 | [![Comcent Stars](https://img.shields.io/github/stars/comcent-io/comcent-ce?style=social&color=white)](https://github.com/comcent-io/comcent-ce/stargazers) | Go / Vue / Docker | Single-box turn-key contact center, WebRTC dialer, AI voice bots & transcription |
+| **[VoIPbin](https://github.com/voipbin/monorepo)** 📦 | [![VoIPbin Stars](https://img.shields.io/github/stars/voipbin/monorepo?style=social&color=white)](https://github.com/voipbin/monorepo/stargazers) | Go / Kubernetes | Modular self-hostable CPaaS monorepo: call flows, AI bots, DIDs & conferences |
+| **[Jambonz API Server](https://github.com/jambonz/jambonz-api-server)** 🧩 | [![Jambonz Stars](https://img.shields.io/github/stars/jambonz/jambonz-api-server?style=social&color=white)](https://github.com/jambonz/jambonz-api-server/stargazers) | Node.js | Modern open-source CPaaS designed specifically for speech and conversational AI |
+| **[CDR-Stats](https://github.com/Star2Billing/cdr-stats)** 📈 | [![CDR-Stats Stars](https://img.shields.io/github/stars/Star2Billing/cdr-stats?style=social&color=white)](https://github.com/Star2Billing/cdr-stats/stargazers) | Python / Django | Call detail record analysis, telecom fraud detection, and reporting suite |
+| **[CXMind](https://github.com/Sonicwell/cxmind)** 🧠 | [![CXMind Stars](https://img.shields.io/github/stars/Sonicwell/cxmind?style=social&color=white)](https://github.com/Sonicwell/cxmind/stargazers) | Go / React | Non-invasive VoIP analytics via HEP capture, PCI-DSS DTMF masking & AI coaching |
+| **[Wazo Call-Logd](https://github.com/wazo-platform/wazo-call-logd)** 📝 | [![Wazo Stars](https://img.shields.io/github/stars/wazo-platform/wazo-call-logd?style=social&color=white)](https://github.com/wazo-platform/wazo-call-logd/stargazers) | Python | REST API daemon for collecting, querying, and exporting CDRs in Wazo stacks |
+
+---
+
+### 🔍 Detailed Open-Source Breakdowns
+
+#### 1. Full CPaaS, Real-Time WebRTC & Contact Center Frameworks
+- **[LiveKit](https://github.com/livekit/livekit)**: An end-to-end WebRTC stack engineered for real-time voice, video, and data streams. Features a dedicated Telephony SIP Gateway allowing users to bridge PSTN/SIP trunks directly into WebRTC and generative voice AI agents.
+- **[Fonoster](https://github.com/fonoster/fonoster)**: An open-source, programmable telecommunications stack inspired by Twilio. Connects carriers with cloud software, provides Node.js SDKs, manages numbers, runs IVRs, and deploys serverless voice apps.
+- **[VoIPbin](https://github.com/voipbin/monorepo)**: A production-grade CPaaS backend deployed on Kubernetes. Features modular microservices including `bin-call-manager` (routing), `bin-flow-manager` (programmable workflows), and `bin-ai-manager` (LLM-driven IVR).
+- **[Comcent CE](https://github.com/comcent-io/comcent-ce)**: A turnkey self-hosted contact center runnable on a single Linux server with Docker. Includes in-browser WebRTC agent dialers, SIP trunk linking, automatic call recording, AI transcription, and voice bots.
+- **[Jambonz](https://github.com/jambonz/jambonz-api-server)**: The open-source voice platform created specifically for conversational AI applications. Integrates FreeSWITCH, Drachtio, and leading speech-to-text / text-to-speech engines.
+
+#### 2. Carrier-Grade Telephony Engines & SIP Routing Cores
+- **[FreeSWITCH](https://github.com/signalwire/freeswitch)**: High-capacity multi-protocol softswitch designed for real-time voice and video processing, audio transcoding, IVR scripting, and raw CDR generation.
+- **[Asterisk](https://github.com/asterisk/asterisk)**: The grandfather of open-source PBX platforms. Provides the media and signaling foundation for hundreds of commercial telecom and inbound call routing vendors worldwide.
+- **[Kamailio](https://github.com/kamailio/kamailio)**: High-concurrency SIP server capable of routing thousands of call setups per second, load-balancing traffic across media clusters, and securing SIP endpoints.
+- **[OpenSIPS](https://github.com/OpenSIPS/opensips)**: High-performance SIP proxy and routing engine offering fine-grained traffic distribution, session timer enforcement, and custom CDR accounting.
+- **[Drachtio Server](https://github.com/drachtio/drachtio-server)**: Modern SIP signaling platform enabling web developers to control call state and session routing using familiar languages like Node.js.
+- **[Sippy B2BUA](https://github.com/sippy/b2bua)**: RFC-compliant SIP Back-to-Back User Agent providing stateful call control, rating, and CDR accounting between multiple carrier endpoints.
+- **[RTPEngine](https://github.com/sipwise/rtpengine)**: In-kernel proxy for handling media traffic between NAT networks, transcoding audio codecs, and capturing raw PCAP voice streams.
+
+#### 3. Analytics, Monitoring & CDR Auditing
+- **[HOMER (SIPCapture)](https://github.com/sipcapture/homer)**: Enterprise-grade packet capture, storage, and visual troubleshooting environment for VoIP/SIP/WebRTC network flows using the HEP protocol.
+- **[CXMind](https://github.com/Sonicwell/cxmind)**: Non-invasive VoIP analytics platform that passively captures HEP/SIP traffic to evaluate call quality (MOS), compliance, DTMF PCI masking, and agent coaching.
+- **[CDR-Stats](https://github.com/Star2Billing/cdr-stats)**: Classic CDR auditing engine designed to ingest millions of call records from FreeSWITCH and Asterisk, identifying traffic anomalies and potential toll fraud.
+- **[Wazo Call-Logd](https://github.com/wazo-platform/wazo-call-logd)**: Microservice daemon dedicated to recording, indexing, and serving call records and recordings via REST APIs.
+
+---
+
+## 🏗️ Key Concepts & Telephony Architecture
+
+To understand how VoIP and Inbound Call Tracking function together, consider the end-to-end call lifecycle:
+
+```
+[ Caller ]
+    │
+    ▼
+[ PSTN / Telco Carrier ]
+    │ (SIP INVITE)
+    ▼
+[ SIP Proxy / SBC (Kamailio / OpenSIPS) ]
+    │
+    ├─► [ Non-Invasive Sniffer (CXMind / HOMER / HEP) ] ──► [ Call Quality & Analytics ]
+    │
+    ▼
+[ Media Switch (FreeSWITCH / Asterisk / RTPEngine) ]
+    │
+    ├─► [ Dynamic Number Insertion (DNI) Engine ] ────► [ Match Web Session / Ad Campaign ]
+    │
+    ├─► [ Audio Stream / WebRTC Gateway (LiveKit) ] ──► [ Conversational AI & Speech-to-Text ]
+    │
+    ▼
+[ CRM / Webhook Endpoint (HubSpot / Webhook) ] ────────► [ Attributed Deal / Ticket ]
+```
+
+1. **Dynamic Number Insertion (DNI)**: JavaScript on a web page displays a unique phone number from a pool based on the visitor's referrer, UTM tags, or session ID, linking the phone call to marketing attribution.
+2. **SIP Signaling vs. RTP Media**: SIP (Session Initiation Protocol) negotiates call setup, routing, and termination, while RTP (Real-time Transport Protocol) carries the actual audio payload.
+3. **CDR (Call Detail Record)**: Metadata produced at call termination containing timestamp, duration, caller ID, destination, disposition (answered/busy), and carrier cost.
+
+---
+
+## 🤝 How to Contribute
+
+We welcome community contributions from telephony engineers, voice bot creators, and marketing analytics professionals!
+
+1. 🍴 **Fork** this repository.
+2. 🌿 **Create a Branch**: `git checkout -b feature/new-telephony-entry`
+3. 📝 **Add Your Entry**: Ensure SaaS entries include verified pricing/trial limits, or open-source entries include valid GitHub links and tech stacks.
+4. 📬 **Submit a PR**: Provide a brief overview explaining why the platform or tool deserves a spot on the list.
+
+---
+
+## ⚖️ Disclaimer & Compliance
+
+- **Community Curated**: This list is independently maintained for educational and reference purposes; listings do not represent commercial endorsements.
+- **Call Recording Consent**: Telecom operators and call tracking users must adhere to international privacy legislation (GDPR, CCPA) and applicable call recording consent laws (one-party vs. two-party notification requirements).
+- **Payment Security**: When capturing customer payments over phone lines, organizations must ensure PCI-DSS compliance (e.g., automated DTMF masking or pausing recordings during card entry).
