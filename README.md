@@ -83,7 +83,7 @@ Open-source VoIP and call tracking repositories deliver remarkable flexibility a
 
 All projects below are ordered by community adoption (GitHub stargazers count descending), featuring social badges linked directly to their stargazer history:
 
-| Project | GitHub Stars | Core Language / Stack | Primary Focus |
+| Project | GitHub_Stars | Core Language / Stack | Primary Focus |
 | :--- | :--- | :--- | :--- |
 | **[LiveKit](https://github.com/livekit/livekit)** 🎥 | [![LiveKit Stars](https://img.shields.io/github/stars/livekit/livekit?style=social&color=white)](https://github.com/livekit/livekit/stargazers) | Go / WebRTC | Real-time WebRTC infrastructure, telephony SIP gateway & multimodal voice AI |
 | **[Fonoster](https://github.com/fonoster/fonoster)** 📞 | [![Fonoster Stars](https://img.shields.io/github/stars/fonoster/fonoster?style=social&color=white)](https://github.com/fonoster/fonoster/stargazers) | Node.js / TypeScript | Open-source alternative to Twilio; programmable voice, SIP trunking & IVR flows |
